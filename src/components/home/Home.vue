@@ -1,0 +1,162 @@
+<template>
+  <div class="container">
+    <div id="welcome-msg" class="welcome-container">
+      <div class="top">text</div>
+
+      <div class="bottom">
+        <hr>
+        <p>{{ text }}</p>
+        <button
+          class="btn btn-trial"
+          type="button"
+          data-toggle="modal"
+          data-target="#cookieConfirmationModal"
+        >Start Trial</button>
+        <div class="bottom-footer">{{ text }}</div>
+      </div>
+    </div>
+    <div id="intro" class="collapsible">
+      <div
+        class="top"
+        :class="[ open === 'cls' ? 'close' : 'open' ]"
+        @click="traceToggle(1,'section1')"
+      >text</div>
+
+      <div v-show="requestItems.includes(1)" class="bottom">
+        <hr>
+        <p>{{ text }}</p>
+      </div>
+    </div>
+    <div id="merchants" class="collapsible">
+      <div
+        class="top"
+        :class="[ open === 'cls' ? 'close' : 'open' ]"
+        @click="traceToggle(2,'section2')"
+      >text</div>
+
+      <div v-show="requestItems.includes(2)" class="bottom">
+        <hr>
+        <p>{{ text }}</p>
+      </div>
+    </div>
+    <div id="faqs" class="collapsible">
+      <div
+        class="top"
+        :class="[ open === 'cls' ? 'close' : 'open' ]"
+        @click="traceToggle(3,'section3')"
+      >text</div>
+
+      <div v-show="requestItems.includes(3)" class="bottom">
+        <hr>
+        <p>{{ text }}</p>
+      </div>
+    </div>
+    <div id="contactus" class="collapsible">
+      <div
+        class="top"
+        :class="[ open === 'cls' ? 'close' : 'open' ]"
+        @click="traceToggle(4,'section4')"
+      >text</div>
+
+      <div v-show="requestItems.includes(4)" class="bottom">
+        <hr>
+        <p>{{ text }}</p>
+      </div>
+    </div>
+
+    <!--StartUp Modal Window-->
+    <!--StartUp Modal Window-->
+  <div id="cookieConfirmationModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="confirmationModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content center-component">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmationModal">Downgram is also available on Google
+            playstore!</h5>
+        </div>
+        <div class="modal-body" style="display:block;">
+          <button type="button" class="btn btn-trial">Add Cookie</button>          
+         
+        </div>
+         <div class="modal-body">
+            <a href='#' data-dismiss="modal">
+            Cancel
+          </a>
+         </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Home",
+  props: {
+    id: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      requestItems: [0],
+      responseItems: [],
+      open: String,
+      text: `
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+          richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+          brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+          tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+          vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+          synth nesciunt you probably haven't heard of them accusamus labore VHS.
+        `
+    };
+  },
+
+  methods: {
+    startTrialConfirmation() {},
+    traceToggle(index, log) {
+      if (log === "text") {
+        if (this.requestItems.includes(index)) {
+          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+          this.open = "opn";
+        } else {
+          this.requestItems.push(index);
+          this.open = "cls";
+        }
+      } else if (log === "section1") {
+        if (this.requestItems.includes(index)) {
+          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+        } else {
+          this.requestItems.push(index);
+        }
+      } else if (log === "section2") {
+        if (this.requestItems.includes(index)) {
+          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+        } else {
+          this.requestItems.push(index);
+        }
+      } else if (log === "section3") {
+        if (this.requestItems.includes(index)) {
+          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+        } else {
+          this.requestItems.push(index);
+        }
+      } else if (log === "section4") {
+        if (this.requestItems.includes(index)) {
+          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+        } else {
+          this.requestItems.push(index);
+        }
+      }
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+@import "Home";
+</style>
