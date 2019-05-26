@@ -8,9 +8,9 @@
   @extend .align-items-center;
 }
 
-.container {
-  padding-right: 3rem;
-  padding-left: 3rem;
+.box-container {
+  padding-right: 4rem;
+  padding-left: 4rem;
   margin-bottom: 5rem;
 }
 
@@ -21,8 +21,7 @@
     color: white;
   }
 
-  a,
-  a:hover {
+  a, a:hover {
     color: gray;
   }
 }
@@ -41,41 +40,58 @@
   }
 }
 
+.welcome-top {
+  padding-top: 1.2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  font-family: Avenir-Heavy;
+  font-size: 1.5rem;
+  line-height: 1.2rem;
+
+}
+
+.bottom {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  cursor: default;
+}
+
+.bottom-footer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  cursor: default;
+}
+
+.modal-content {
+  width: 75%;
+}
+
 .collapsible-container {
   border-radius: 3px;
   box-shadow: 0 0 3px -1px #000000;
   overflow: hidden;
   margin: 20px 0;
   background-color: #ffffff;
-}
-
-.top {
-  padding-top: 1.4rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-bottom: 2.6rem;
-  position: relative;
-  font-family: Avenir-Heavy;
-  font-size: 1.5rem;
-  line-height: 1.2rem;
   cursor: pointer;
-}
 
-.bottom {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
+  .top {
+    padding-top: 1.4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 2.6rem;
+    position: relative;
+    font-family: Avenir-Heavy;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+  }
 
-.bottom-footer {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-}
-
-.collapsible-container {
   @keyframes anim {
     100% {
-      -webkit-transform: rotateZ(60deg) translate(1em, -9em);
-      transform: rotateZ(60deg) translate(1em, -9em);
+      -webkit-transform: rotateZ(180deg) translate(1em, -9em);
+      transform: rotateZ(180deg) translate(1em, -9em);
     }
   }
 
@@ -83,14 +99,14 @@
     content: "\002B";
     font-size: 2.5rem;
     color: #e97601;
-    animation: anim 2s forwards;
+    animation: anim 3s;
   }
 
   .open-panel::after {
     content: "\002D";
     font-size: 3rem;
     color: #e97601;
-    animation: anim 2s forwards;
+    animation: anim 2s;
   }
 
   .top-left-element {

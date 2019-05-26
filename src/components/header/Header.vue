@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-white navbar-light align-items-center">
-    <a class="navbar-brand" href="#">
+  <nav class="navbar navbar-expand-lg bg-white navbar-light">
+    <a class="small-navbar-brand" href="#">
       <span class="header-text">SRC</span>
       <img class="icon" src="../../assets/logo.png">
     </a>
@@ -16,7 +16,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto mx-auto">
+        <li class="nav-item main-navbar-brand">
+          <a class="navbar-brand" href="#">
+            <span class="header-text">SRC</span>
+            <img class="icon" src="../../assets/logo.png">
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#intro">How It Works</a>
         </li>

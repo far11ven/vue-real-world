@@ -1,14 +1,28 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootstrap-vue/src/index.scss";
 
+.small-navbar-brand {
+  display: none;
+}
+
 .header-text::after {
   content: "\007C";
   padding: 0.6rem;
 }
 .nav-link::after {
   content: "\007C";
-  padding-left:inherit;
+  text-decoration: none;
+  padding-left: inherit;
+}
 
+.nav-link::active {
+  text-decoration: overline;
+}
+
+.nav-link::after:hover {
+  content: "\007C";
+  text-decoration: none;
+  padding-left: inherit;
 }
 
 .nav-link-last::after {
@@ -17,18 +31,37 @@
 
 .header-text {
   font-size: 20px;
-  margin-right: 10px;
 }
 
 .icon {
   height: 20px;
 }
 
+.main-navbar-brand {
+  margin-right:22rem;
+}
+
 @media (max-width: 991px) {
   .nav-link::after {
     content: "\0020";
-    padding-left:inherit;
-  
+    padding-left: inherit;
   }
-  
+
+  .main-navbar-brand {
+    display: none;
+  }
+
+  .small-navbar-brand {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .small-navbar-brand:hover {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+  }
 }

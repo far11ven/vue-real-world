@@ -1,100 +1,104 @@
 <template>
   <div class="container">
-    <div id="welcome-msg" class="welcome-container">
-      <div class="top">text</div>
+    <div class="box-container">
+      <div id="welcome-msg" class="welcome-container">
+        <div class="welcome-top">Welcome To FUT</div>
 
-      <div class="bottom">
-        <hr>
-        <p>{{ text }}</p>
-        <button
-          class="btn btn-trial"
-          type="button"
-          data-toggle="modal"
-          data-target="#cookieConfirmationModal"
-        >Start Trial</button>
-        <div class="bottom-footer">{{ text }}</div>
+        <div class="bottom">
+          <hr>
+          <p>{{ text }}</p>
+          <button
+            class="btn btn-trial"
+            type="button"
+            data-toggle="modal"
+            data-target="#cookieConfirmationModal"
+          >Start Trial</button>
+          <div class="bottom-footer">{{ text }}</div>
+        </div>
       </div>
-    </div>
-    <div id="intro" class="collapsible-container" @click="traceToggle(1,'section1')">
-      <div class="top">
-        <div class="top-left-element">text</div>
-        <div
-          class="top-right-element"
-          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
-        ></div>
+      <div id="intro" class="collapsible-container" @click="traceToggle(1,'section1')">
+        <div class="top">
+          <div class="top-left-element">How It Works</div>
+          <div
+            class="top-right-element"
+            :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+          ></div>
+        </div>
+
+        <div v-show="requestItems1.includes(1)" class="bottom">
+          <hr>
+          <p>{{ text }}</p>
+        </div>
+      </div>
+      <div id="merchants" class="collapsible-container" @click="traceToggle(2,'section2')">
+        <div class="top">
+          <div class="top-left-element">Participating Merchants</div>
+          <div
+            class="top-right-element"
+            :class="[ section2Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+          ></div>
+        </div>
+
+        <div v-show="requestItems2.includes(2)" class="bottom">
+          <hr>
+          <p>{{ text }}</p>
+          <p>{{ text }}</p>
+          <p>{{ text }}</p>
+        </div>
+      </div>
+      <div id="faqs" class="collapsible-container" @click="traceToggle(3,'section3')">
+        <div class="top">
+          <div class="top-left-element">FAQs</div>
+          <div
+            class="top-right-element"
+            :class="[ section3Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+          ></div>
+        </div>
+
+        <div v-show="requestItems3.includes(3)" class="bottom">
+          <hr>
+          <p>{{ text }}</p>
+        </div>
+      </div>
+      <div id="contactus" class="collapsible-container" @click="traceToggle(4,'section4')">
+        <div class="top">
+          <div class="top-left-element">Contact Support</div>
+          <div
+            class="top-right-element"
+            :class="[ section4Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+          ></div>
+        </div>
+
+        <div v-show="requestItems4.includes(4)" class="bottom">
+          <hr>
+          <p>{{ text }}</p>
+        </div>
       </div>
 
-      <div v-show="requestItems1.includes(1)" class="bottom">
-        <hr>
-        <p>{{ text }}</p>
-      </div>
-    </div>
-    <div id="merchants" class="collapsible-container" @click="traceToggle(2,'section2')">
-      <div class="top">
-        <div class="top-left-element">text</div>
-        <div
-          class="top-right-element"
-          :class="[ section2Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
-        ></div>
-      </div>
-
-      <div v-show="requestItems2.includes(2)" class="bottom">
-        <hr>
-        <p>{{ text }}</p>
-      </div>
-    </div>
-    <div id="faqs" class="collapsible-container" @click="traceToggle(3,'section3')">
-      <div class="top">
-        <div class="top-left-element">text</div>
-        <div
-          class="top-right-element"
-          :class="[ section3Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
-        ></div>
-      </div>
-
-      <div v-show="requestItems3.includes(3)" class="bottom">
-        <hr>
-        <p>{{ text }}</p>
-      </div>
-    </div>
-    <div id="contactus" class="collapsible-container" @click="traceToggle(4,'section4')">
-      <div class="top">
-        <div class="top-left-element">text</div>
-        <div
-          class="top-right-element"
-          :class="[ section4Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
-        ></div>
-      </div>
-
-      <div v-show="requestItems4.includes(4)" class="bottom">
-        <hr>
-        <p>{{ text }}</p>
-      </div>
-    </div>
-
-    <!--StartUp Modal Window-->
-    <!--StartUp Modal Window-->
-    <div
-      id="cookieConfirmationModal"
-      class="modal fade in"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="confirmationModal"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content center-component">
-          <div class="modal-header">
-            <h5 class="modal-title" id="confirmationModal">
-              Downgram is also available on Google
-              playstore!
-            </h5>
-          </div>
-          <div class="modal-body" style="display:block;">
-            <button type="button" class="btn btn-trial">Add Cookie</button>
-          </div>
-          <div class="modal-body">
-            <a href="#" data-dismiss="modal">Cancel</a>
+      <!--StartUp Modal Window-->
+      <!--StartUp Modal Window-->
+      <div
+        id="cookieConfirmationModal"
+        class="modal fade in"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="confirmationModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content center-component">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmationModal">
+                Downgram is also available on Google
+                playstore!
+              </h5>
+            </div>
+            <div class="modal-body" style="display:block;">
+              <button type="button" class="btn btn-trial">Add Cookie</button>
+            </div>
+            <div class="modal-body">
+              <a href="#" data-dismiss="modal">Cancel</a>
+            </div>
           </div>
         </div>
       </div>
