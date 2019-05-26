@@ -15,50 +15,58 @@
         <div class="bottom-footer">{{ text }}</div>
       </div>
     </div>
-    <div id="intro" class="collapsible">
-      <div
-        class="top"
-        :class="[ open === 'cls' ? 'close' : 'open' ]"
-        @click="traceToggle(1,'section1')"
-      >text</div>
+    <div id="intro" class="collapsible" @click="traceToggle(1,'section1')">
+      <div class="top">
+        <div class="top-left-element">text</div>
+        <div
+          class="top-right-element"
+          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+        ></div>
+      </div>
 
-      <div v-show="requestItems.includes(1)" class="bottom">
+      <div v-show="requestItems1.includes(1)" class="bottom">
         <hr>
         <p>{{ text }}</p>
       </div>
     </div>
-    <div id="merchants" class="collapsible">
-      <div
-        class="top"
-        :class="[ open === 'cls' ? 'close' : 'open' ]"
-        @click="traceToggle(2,'section2')"
-      >text</div>
+    <div id="merchants" class="collapsible" @click="traceToggle(1,'section1')">
+      <div class="top">
+        <div class="top-left-element">text</div>
+        <div
+          class="top-right-element"
+          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+        ></div>
+      </div>
 
-      <div v-show="requestItems.includes(2)" class="bottom">
+      <div v-show="requestItems2.includes(2)" class="bottom">
         <hr>
         <p>{{ text }}</p>
       </div>
     </div>
-    <div id="faqs" class="collapsible">
-      <div
-        class="top"
-        :class="[ open === 'cls' ? 'close' : 'open' ]"
-        @click="traceToggle(3,'section3')"
-      >text</div>
+    <div id="faqs" class="collapsible" @click="traceToggle(1,'section1')">
+      <div class="top">
+        <div class="top-left-element">text</div>
+        <div
+          class="top-right-element"
+          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+        ></div>
+      </div>
 
-      <div v-show="requestItems.includes(3)" class="bottom">
+      <div v-show="requestItems3.includes(3)" class="bottom">
         <hr>
         <p>{{ text }}</p>
       </div>
     </div>
-    <div id="contactus" class="collapsible">
-      <div
-        class="top"
-        :class="[ open === 'cls' ? 'close' : 'open' ]"
-        @click="traceToggle(4,'section4')"
-      >text</div>
+    <div id="contactus" class="collapsible" @click="traceToggle(1,'section1')">
+      <div class="top">
+        <div class="top-left-element">text</div>
+        <div
+          class="top-right-element"
+          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+        ></div>
+      </div>
 
-      <div v-show="requestItems.includes(4)" class="bottom">
+      <div v-show="requestItems4.includes(4)" class="bottom">
         <hr>
         <p>{{ text }}</p>
       </div>
@@ -66,26 +74,31 @@
 
     <!--StartUp Modal Window-->
     <!--StartUp Modal Window-->
-  <div id="cookieConfirmationModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="confirmationModal"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content center-component">
-        <div class="modal-header">
-          <h5 class="modal-title" id="confirmationModal">Downgram is also available on Google
-            playstore!</h5>
+    <div
+      id="cookieConfirmationModal"
+      class="modal fade in"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="confirmationModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content center-component">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmationModal">
+              Downgram is also available on Google
+              playstore!
+            </h5>
+          </div>
+          <div class="modal-body" style="display:block;">
+            <button type="button" class="btn btn-trial">Add Cookie</button>
+          </div>
+          <div class="modal-body">
+            <a href="#" data-dismiss="modal">Cancel</a>
+          </div>
         </div>
-        <div class="modal-body" style="display:block;">
-          <button type="button" class="btn btn-trial">Add Cookie</button>          
-         
-        </div>
-         <div class="modal-body">
-            <a href='#' data-dismiss="modal">
-            Cancel
-          </a>
-         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -100,9 +113,14 @@ export default {
   },
   data() {
     return {
-      requestItems: [0],
-      responseItems: [],
-      open: String,
+      requestItems1: [0],
+      requestItems2: [0],
+      requestItems3: [0],
+      requestItems4: [0],
+      section1Flag: "cls",
+      section2Flag: "cls",
+      section3Flag: "cls",
+      section4Flag: "cls",
       text: `
           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
           richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -118,8 +136,8 @@ export default {
 
   methods: {
     startTrialConfirmation() {},
-    traceToggle(index, log) {
-      if (log === "text") {
+    traceToggle(index, requestor) {
+      if (requestor === "text") {
         if (this.requestItems.includes(index)) {
           this.requestItems.splice(this.requestItems.indexOf(index), 1);
           this.open = "opn";
@@ -127,29 +145,37 @@ export default {
           this.requestItems.push(index);
           this.open = "cls";
         }
-      } else if (log === "section1") {
-        if (this.requestItems.includes(index)) {
-          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+      } else if (requestor === "section1") {
+        if (this.requestItems1.includes(index)) {
+          this.requestItems1.splice(this.requestItems1.indexOf(index), 1);
+          this.section1Flag = "cls";
         } else {
-          this.requestItems.push(index);
+          this.requestItems1.push(index);
+          this.section1Flag = "opn";
         }
-      } else if (log === "section2") {
-        if (this.requestItems.includes(index)) {
-          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+      } else if (requestor === "section2") {
+        if (this.requestItems2.includes(index)) {
+          this.requestItems2.splice(this.requestItems2.indexOf(index), 1);
+          this.section2Flag = "cls";
         } else {
-          this.requestItems.push(index);
+          this.requestItems2.push(index);
+          this.section2Flag = "opn";
         }
-      } else if (log === "section3") {
-        if (this.requestItems.includes(index)) {
-          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+      } else if (requestor === "section3") {
+        if (this.requestItems3.includes(index)) {
+          this.requestItems3.splice(this.requestItems3.indexOf(index), 1);
+          this.section3Flag = "cls";
         } else {
-          this.requestItems.push(index);
+          this.requestItems3.push(index);
+          this.section3Flag = "opn";
         }
-      } else if (log === "section4") {
-        if (this.requestItems.includes(index)) {
-          this.requestItems.splice(this.requestItems.indexOf(index), 1);
+      } else if (requestor === "section4") {
+        if (this.requestItems4.includes(index)) {
+          this.requestItems4.splice(this.requestItems4.indexOf(index), 1);
+          this.section4Flag = "cls";
         } else {
-          this.requestItems.push(index);
+          this.requestItems4.push(index);
+          this.section4Flag = "opn";
         }
       }
     }

@@ -19,3 +19,11 @@ yarn run build
 ```
 yarn run lint
 ```
+
+Pending Items:
+-- remove popper
+-- Center navbar items
+-- Padding for main container
+-- Footer padding
+-- animation for accordion
+-- add logos

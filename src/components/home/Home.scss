@@ -11,9 +11,8 @@
 .container {
   padding-right: 3rem;
   padding-left: 3rem;
-  margin-bottom: 2%;
+  margin-bottom: 5rem;
 }
-
 
 #cookieConfirmationModal {
   .btn-trial {
@@ -22,10 +21,10 @@
     color: white;
   }
 
-  a, a:hover{
+  a,
+  a:hover {
     color: gray;
   }
-
 }
 
 .welcome-container {
@@ -51,15 +50,14 @@
 }
 
 .top {
-  padding-top: 1.5rem;
+  padding-top: 1.4rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.6rem;
   position: relative;
   font-family: Avenir-Heavy;
-  font-size: 16.2px;
-
-  line-height: 17.1px;
+  font-size: 1.5rem;
+  line-height: 1.2rem;
   cursor: pointer;
 }
 
@@ -74,66 +72,30 @@
 }
 
 .collapsible {
-  .top::after {
-    content: "\002B";
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    //border-top: 6px solid black;
-    //border-left: 6px solid transparent;
-    //border-right: 6px solid transparent;
-    //border-bottom: 0px solid black;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    margin-top: -3px;
-    z-index: 5;
+  @keyframes anim {
+    100% {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
   }
 
-  .open::after {
+  .close-panel::after {
     content: "\002B";
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    //border-top: 6px solid black;
-    //border-left: 6px solid transparent;
-    //border-right: 6px solid transparent;
-    //border-bottom: 0px solid black;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    margin-top: -3px;
-    z-index: 5;
+    font-size: 2.5rem;
+    color: #e97601;
   }
 
-  .close::after {
+  .open-panel::after {
     content: "\002D";
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    //border-top: 6px solid black;
-    //border-left: 6px solid transparent;
-    //border-right: 6px solid transparent;
-    //border-bottom: 0px solid black;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    margin-top: -3px;
-    z-index: 5;
+    font-size: 2.5rem;
+    color: #e97601;
   }
 
-  label {
-    font-size: 90%;
-    padding: 5px;
-    margin: 0px 5px 0px 15px;
-    display: block;
-    font-weight: normal;
+  .top-left-element {
+    float: left;
   }
 
-  pre {
-    border: none;
-    border-radius: 0;
-    padding: 10px;
-    margin: 0;
-    overflow-x: scroll;
+  .top-right-element {
+    float: right;
   }
 }
-
-
