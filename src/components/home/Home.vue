@@ -15,7 +15,7 @@
         <div class="bottom-footer">{{ text }}</div>
       </div>
     </div>
-    <div id="intro" class="collapsible" @click="traceToggle(1,'section1')">
+    <div id="intro" class="collapsible-container" @click="traceToggle(1,'section1')">
       <div class="top">
         <div class="top-left-element">text</div>
         <div
@@ -29,12 +29,12 @@
         <p>{{ text }}</p>
       </div>
     </div>
-    <div id="merchants" class="collapsible" @click="traceToggle(1,'section1')">
+    <div id="merchants" class="collapsible-container" @click="traceToggle(2,'section2')">
       <div class="top">
         <div class="top-left-element">text</div>
         <div
           class="top-right-element"
-          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+          :class="[ section2Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
         ></div>
       </div>
 
@@ -43,12 +43,12 @@
         <p>{{ text }}</p>
       </div>
     </div>
-    <div id="faqs" class="collapsible" @click="traceToggle(1,'section1')">
+    <div id="faqs" class="collapsible-container" @click="traceToggle(3,'section3')">
       <div class="top">
         <div class="top-left-element">text</div>
         <div
           class="top-right-element"
-          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+          :class="[ section3Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
         ></div>
       </div>
 
@@ -57,12 +57,12 @@
         <p>{{ text }}</p>
       </div>
     </div>
-    <div id="contactus" class="collapsible" @click="traceToggle(1,'section1')">
+    <div id="contactus" class="collapsible-container" @click="traceToggle(4,'section4')">
       <div class="top">
         <div class="top-left-element">text</div>
         <div
           class="top-right-element"
-          :class="[ section1Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
+          :class="[ section4Flag === 'opn' ? 'open-panel' : 'close-panel' ]"
         ></div>
       </div>
 

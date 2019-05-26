@@ -28,7 +28,7 @@
 }
 
 .welcome-container {
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 0 0 3px -1px #000000;
   overflow: hidden;
   margin: 20px 0;
@@ -41,8 +41,8 @@
   }
 }
 
-.collapsible {
-  border-radius: 2px;
+.collapsible-container {
+  border-radius: 3px;
   box-shadow: 0 0 3px -1px #000000;
   overflow: hidden;
   margin: 20px 0;
@@ -71,11 +71,11 @@
   font-size: 0.8rem;
 }
 
-.collapsible {
+.collapsible-container {
   @keyframes anim {
     100% {
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg);
+      -webkit-transform: rotateZ(60deg) translate(1em, -9em);
+      transform: rotateZ(60deg) translate(1em, -9em);
     }
   }
 
@@ -83,12 +83,14 @@
     content: "\002B";
     font-size: 2.5rem;
     color: #e97601;
+    animation: anim 2s forwards;
   }
 
   .open-panel::after {
     content: "\002D";
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #e97601;
+    animation: anim 2s forwards;
   }
 
   .top-left-element {
